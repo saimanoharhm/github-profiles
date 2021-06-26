@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #f7dad9;
+  background-image: linear-gradient(315deg, #f7dad9 0%, #f7dad9 74%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+h1,
+h4 {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 2rem;
+}
+
+.oauth-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.oauth-box img {
+  margin-left: 15px;
+}
+#demo img {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

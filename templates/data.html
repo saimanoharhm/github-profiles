@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <title>Flask Assessment</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='/css/index.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h1>Data of the user.</h1>
+    <div id="demo">
+      <table border="1">
+        {% for key, value in data.items() %} {% if key =='name' %}
+        <h4>Name: {{value}}</h4>
+        {% elif key == 'avatar_url' %}
+        <img class="avatar" src="{{value}}" />
+        {% elif key == 'public_repos' %}
+        <h4>Repositories: {{value}}</h4>
+        {% elif key == 'followers' %}
+        <h4>followers: {{value}}</h4>
+        {% elif key == 'following' %}
+        <h4>following: {{value}}</h4>
+        {% endif %} {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>
