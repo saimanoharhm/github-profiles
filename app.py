@@ -44,8 +44,6 @@ def github_authorize():
     github = oauth.create_client('github')
     token = github.authorize_access_token()
     resp = github.get('user').json()
-    print("Type of: ",type(resp))
-    print(f"\n{resp}\n")
     return render_template('data.html', title="page", data=resp)
 
 if __name__ == '__main__':
