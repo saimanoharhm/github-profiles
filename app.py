@@ -1,13 +1,14 @@
-from flask import Flask, render_template, url_for, redirect
+from flask import Flask, render_template, url_for
 from authlib.integrations.flask_client import OAuth
-import json
+import os
+
 app = Flask(__name__)
 
 oauth = OAuth(app)
 
 app.config['SECRET_KEY'] = "THIS SHOULD BE SECRET"
-app.config['GITHUB_CLIENT_ID'] = "77f241282b1eb592b77a"
-app.config['GITHUB_CLIENT_SECRET'] = "20ec16101e39c4a07cba437266b5f917f9f6ea97"
+app.config['GITHUB_CLIENT_ID'] = os.getenv("CLIENT_ID")
+app.config['GITHUB_CLIENT_SECRET'] = os.getenv("CLIENT_SECRET")
 
 
 github = oauth.register (
